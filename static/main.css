@@ -1,0 +1,92 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+#head .image{
+    width: 100px;
+    border-radius: 4px;
+    margin-left: 15px;
+}
+#head .image:hover{
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.6);
+    color: #060606
+}
+#head li a{
+    padding-right: 20px;
+}
+#head li a:hover::after,
+#head li a:active::after{
+   color: #088179;   
+}
+#info{
+    text-align: center;
+}
+#info p{
+    margin-top: 80px;
+    text-align: center;
+    color: black;
+    font-size: 40px;
+    font: sans-serif;
+    font-weight: 500;
+    
+}
+#info input{
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    
+}
+#info button{
+    margin-top: 40px;
+    width: 24%;
+}
+.start1 p{
+   margin: 30px;
+}
+#pass{
+    text-align: center;
+    justify-content: center;
+    background-color: blue;
+}
+
+#contactus a{
+    margin-right: 20px;
+    
+}
+
+
+
+
+
+@media  screen and (max-width: 768px){
+    .img1{
+            width: 200px;
+            
+    }
+    .col1{
+        flex-basis: 50%;
+    }
+}
+@media  screen and (max-width: 480px) {
+    .img1{
+        width: 30px;
+    }
+    .col1{
+        flex-basis: 50%;
+    }
+}
+@media  screen and (max-width: 992px) {
+        .img1{
+            width: 300px;
+        }
+        .col1{
+            flex-basis: 50%;
+        }
+    }
+
+
+    

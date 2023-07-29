@@ -1,0 +1,403 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+             {% block content %}
+             <h1 style="color: blue; margin-top:40px; margin-bottom:20px; text-align:center; margin: left 10px;" class="h1 head1">Hi <mark style="color: red;">{{name1}}</mark></h1>
+
+             <section id="section12" class="container btn2">
+                <div class="div1">
+                <button onclick="showSection('section13')" class="btn btn-primary btn1">START</button>
+            </div>
+            </section> 
+
+            <section id="section13" style="display: none; background-color:white">
+                <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">1.Which one you drink most</h1>
+        <form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+            {% csrf_token %}
+            {{ from.as_p }}
+        <div class=" container row flex-row" style="margin-left: 10px;">
+               
+            <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+                  <a href="#section14" style="text-decoration: none;" onclick="setImage10(1)">
+                  <img src="{% static 'images/tea.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none; background-color:black">
+            <div class="card-body">
+                <h3 style="color:gray">Tea</h3></a>
+               </div></div>
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+            <a href="#section14" style="text-decoration: none;" onclick="setImage10(2)">
+            <img src="{% static 'images/coffee.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+            <div class="card-body">
+                <h3 style="color:gray">Coffee</h3></a>
+               </div>
+        </div>
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+            <a href="#section14" style="text-decoration: none;" onclick="setImage10(3)">
+            <img src="{% static 'images/cooldrinks.webp' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+            <div class="card-body">
+                <h3 style="color:gray">Cooldrinks</h3></a>
+               </div>
+        </div>
+        <div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+            <a href="#section14" style="text-decoration: none;" onclick="setImage10(4)">
+            <img src="{% static 'images/noneofthese.jpg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+            <div class="card-body">
+                <h3 style="color:gray">Noneofthese</h3></a>
+               </div>
+        </div>
+      </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </form>
+    <input type="hidden" id="selectedImage10" value="">
+    <p id="selectedImageDisplay10"></p>
+
+    <section id="section14">
+        <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">2.Do you love school life or college life</h1>
+        <form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+            {% csrf_token %}
+            {{ from.as_p }}
+        <div class=" container row flex-row" style="margin-left: 10px;">
+               
+            <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+                  <a href="#section15" style="text-decoration: none;" onclick="setImage11(1)" >
+                  <img src="{% static 'images/school.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+            <div class="card-body">
+                <h3 style="color:gray">School</h3></a>
+               </div></div>
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+            <a href="#section15" style="text-decoration: none;" onclick="setImage11(2)">
+            <img src="{% static 'images/college.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+            <div class="card-body">
+                <h3 style="color:gray">College</h3></a>
+               </div>
+        </div>
+      </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </form>
+    <input type="hidden" id="selectedImage11" value="">
+    <p id="selectedImageDisplay11"></p>
+  </section>
+
+  <section id="section15">
+    <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">3.Which is all time your favourite entertainment app</h1>
+    <form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+        {% csrf_token %}
+        {{ from.as_p }}
+    <div class=" container row flex-row" style="margin-left: 10px;">
+           
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+              <a href="#section16" style="text-decoration: none;" onclick="setImage12(1)">
+              <img src="{% static 'images/netflix.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+        <div class="card-body">
+            <h3 style="color:gray">Netflix</h3></a>
+           </div></div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+        <a href="#section16" style="text-decoration: none;" onclick="setImage12(2)">
+        <img src="{% static 'images/amazon.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Amzon</h3></a>
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section16" style="text-decoration: none;" onclick="setImage12(3)">
+        <img src="{% static 'images/hotstar.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+        <div class="card-body">
+            <h3 style="color:gray">Hotstar</h3></a>
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section16" style="text-decoration: none;" onclick="setImage12(4)">
+        <img src="{% static 'images/youtube.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Youtube</h3></a>
+           </div>
+    </div>
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+<input type="hidden" id="selectedImage12" value="">
+<p id="selectedImageDisplay12"></p>
+ </section>
+
+ <section id="section16">
+    <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">4.If you get an oppurtunity for an adventurous journey would you prefer</h1>
+<form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+    {% csrf_token %}
+    {{ from.as_p }}
+<div class=" container row flex-row" style="margin-left: 10px;">
+       
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+          <a href="#section17" style="text-decoration: none;" onclick="setImage13(1)">
+          <img src="{% static 'images/family.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+    <div class="card-body">
+        <h3 style="color:gray">Family</h3></a>
+       </div></div>
+<div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+    <a href="#section17" style="text-decoration: none;" onclick="setImage13(2)">
+    <img src="{% static 'images/soulmate.jpg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+    <div class="card-body">
+        <h3 style="color:gray">Soulmate</h3></a>
+       </div>
+</div>
+<div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+    <a href="#section17" style="text-decoration: none;" onclick="setImage13(3)">
+    <img src="{% static 'images/friends.jpg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+    <div class="card-body">
+        <h3 style="color:gray">Friends</h3></a>
+       </div>
+</div>
+<div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+    <a href="#section17" style="text-decoration: none;" onclick="setImage13(4)">
+    <img src="{% static 'images/alone.jpg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+    <div class="card-body">
+        <h3 style="color:gray">Alone</h3></a>
+       </div>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+<input type="hidden" id="selectedImage13" value="">
+<p id="selectedImageDisplay13"></p>
+  </section>
+
+  <section id="section17">
+    <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">5.What is your routine morning</h1>
+    <form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+        {% csrf_token %}
+        {{ from.as_p }}
+    <div class=" container row flex-row" style="margin-left: 10px;">
+           
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+              <a href="#section18" style="text-decoration: none;" onclick="setImage14(1)">
+              <img src="{% static 'images/yoga.webp' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+        <div class="card-body">
+            <h3 style="color:gray">Yoga</h3></a>
+           </div></div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+        <a href="#section18" style="text-decoration: none;" onclick="setImage14(2)">
+        <img src="{% static 'images/exercise.webp' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Exercise</h3></a>
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section18" style="text-decoration: none;" onclick="setImage14(3)">
+        <img src="{% static 'images/mobile.jpg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+        <div class="card-body">
+            <h3 style="color:gray">Mobile</h3></a>                   
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section18" style="text-decoration: none;" onclick="setImage14(4)">
+        <img src="{% static 'images/jogging.jpg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Jogging</h3></a>
+           </div>
+    </div>
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+<input type="hidden" id="selectedImage14" value="">
+<p id="selectedImageDisplay14"></p>
+ </section>
+
+ <section id="section18">
+    <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">6.If you travel option which one you choose</h1>
+ <form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+     {% csrf_token %}
+     {{ from.as_p }}
+ <div class=" container row flex-row" style="margin-left: 10px;">
+        
+     <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+           <a href="#section19" style="text-decoration: none;" onclick="setImage15(1)">
+           <img src="{% static 'images/past.jpg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+     <div class="card-body">
+         <h3 style="color:gray">Past</h3></a>
+        </div></div>
+ <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+     <a href="#section19" style="text-decoration: none;" onclick="setImage15(2)">
+     <img src="{% static 'images/future.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+     <div class="card-body">
+         <h3 style="color:gray">Future</h3></a>
+        </div>
+ </div>
+ 
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+<input type="hidden" id="selectedImage15" value="">
+<p id="selectedImageDisplay15"></p>
+ </section>
+
+ <section id="section19">
+    <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">7.Give a chance to travel to a dream destination,which one would you pick</h1>
+<form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+    {% csrf_token %}
+    {{ from.as_p }}
+<div class=" container row flex-row" style="margin-left: 10px;">
+       
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+          <a href="#section20" style="text-decoration: none;" onclick="setImage16(1)">
+          <img src="{% static 'images/kedarnath.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+    <div class="card-body">
+        <h3 style="color:gray">Kedarnath</h3></a>
+       </div></div>
+<div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+    <a href="#section20" style="text-decoration: none;" onclick="setImage16(2)">
+    <img src="{% static 'images/paris.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+    <div class="card-body">
+        <h3 style="color:gray">Paris</h3></a>
+       </div>
+</div>
+<div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+    <a href="#section20" style="text-decoration: none;" onclick="setImage16(3)">
+    <img src="{% static 'images/america.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+    <div class="card-body">
+        <h3 style="color:gray">America</h3></a>                   
+       </div>
+</div>
+<div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+    <a href="#section20" style="text-decoration: none;" onclick="setImage16(4)">
+    <img src="{% static 'images/newzealand.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+    <div class="card-body">
+        <h3 style="color:gray">Newzealand</h3></a>
+       </div>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+<input type="hidden" id="selectedImage16" value="">
+<p id="selectedImageDisplay16"></p>
+ </section>
+
+ <section id="section20">
+    <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">8.What would you like to achieve in the next five years</h1>
+<form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+    {% csrf_token %}
+    {{ from.as_p }}
+<div class=" container row flex-row" style="margin-left: 10px;">
+       
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+          <a href="#section21" style="text-decoration: none;" onclick="setImage17(1)">
+          <img src="{% static 'images/job.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+    <div class="card-body">
+        <h3 style="color:gray">Job</h3></a>
+       </div></div>
+<div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+    <a href="#section21" style="text-decoration: none;" onclick="setImage17(2)">
+    <img src="{% static 'images/bussiness.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+    <div class="card-body">
+        <h3 style="color:gray">Start a bussiness</h3></a>
+       </div>
+</div>
+<div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+    <a href="#section21" style="text-decoration: none;" onclick="setImage17(3)">
+    <img src="{% static 'images/abroad.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+    <div class="card-body">
+        <h3 style="color:gray">Move abroad</h3></a>                   
+       </div>
+</div>
+<div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+    <a href="#section21" style="text-decoration: none;" onclick="setImage17(4)">
+    <img src="{% static 'images/book.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+    <div class="card-body">
+        <h3 style="color:gray">JWrite a book</h3></a>
+       </div>
+</div>
+</div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+<input type="hidden" id="selectedImage17" value="">
+<p id="selectedImageDisplay17"></p>
+ </section>
+
+ <section id="section21">
+    <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">9.What do you use most"</h1>
+    <form id="ImageForm" action="{% url 'quiz3' %}" method="POST" >
+        {% csrf_token %}
+        {{ from.as_p }}
+    <div class=" container row flex-row" style="margin-left: 10px;">
+           
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+              <a href="#section22" style="text-decoration: none;" onclick="setImage18(1)">
+              <img src="{% static 'images/youtube.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+        <div class="card-body">
+            <h3 style="color:gray">Youtube</h3></a>
+           </div></div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+        <a href="#section22" style="text-decoration: none;" onclick="setImage18(2)">
+        <img src="{% static 'images/whatsapp.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Whatsapp</h3></a>
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section22" style="text-decoration: none;" onclick="setImage18(3)">
+        <img src="{% static 'images/instagram.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+        <div class="card-body">
+            <h3 style="color:gray">Instagram</h3></a>                   
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section22" style="text-decoration: none;" onclick="setImage18(4)">
+        <img src="{% static 'images/games.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Games</h3></a>
+           </div>
+    </div>
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+<input type="hidden" id="selectedImage18" value="">
+<p id="selectedImageDisplay18"></p>
+ </section>
+
+ <section id="section22">
+            
+       
+    <h1 style="color: blue; margin-top:40px; margin-bottom:80px; text-align:center;">10.Who is your favourite cricketer</h1>
+    <form id="ImageForm" action="{% url 'quiz3' %}" method="POST">
+        {% csrf_token %}
+        {{ from.as_p }}
+    <div class=" container row flex-row" style="margin-left: 10px;">
+           
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+              <a href="#section23" style="text-decoration: none;" onclick="setImage19(1)" class="next-section-link">
+              <img src="{% static 'images/sachin.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+        <div class="card-body">
+            <h3 style="color:gray">Sachin tendulkar</h3></a>
+           </div></div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+        <a href="#section23" style="text-decoration: none;" onclick="setImage19(2)">
+        <img src="{% static 'images/kohli.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Virat Kohli</h3></a>
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section23" style="text-decoration: none;" onclick="setImage19(3)">
+        <img src="{% static 'images/raina.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+        <div class="card-body">
+            <h3 style="color:gray">Suresh raina</h3></a>                   
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section23" style="text-decoration: none;" onclick="setImage19(4)">
+        <img src="{% static 'images/dhoni.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">M.S.Dhoni</h3></a>
+           </div>
+    </div>
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</form>
+<input type="hidden" id="selectedImage19" value="">
+<p id="selectedImageDisplay19"></p>
+    </section>
+    <section  class="container btn2" id="section23">
+        <div class="div1">
+        <a href='final'><button class="btn btn-primary btn1">Click Here</button></a>
+    </div>
+    </section> 
+
+            </section>
+             {% endblock %}
+</body>
+</html>

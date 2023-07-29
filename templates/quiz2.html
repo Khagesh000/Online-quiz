@@ -1,0 +1,98 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        {% block content %}
+
+        <section id="head">
+            <div class="navbar navbar-light bg-light navbar-expand-lg">
+             <a href="#" class="navbar-brand"><img src="{% static 'images/mani.png' %}" alt="" class="image"></a>
+             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span></button>
+             <div class="navbar-collapse collapse" id="menu">
+               <ul class="navbar-nav ms-auto">
+                 <li class="nav-item"><a class="nav-link" aria-current="page" href="#contactus">Contact us</a></li>
+                 <li class="nav-item"><a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Privacy policy</a></li>
+               </ul>
+             </div>
+            </div>
+           </section>
+
+                 
+          <section id="info">
+            <form action="{% url 'quiz2' %}" method="post" id="myform">
+              {% csrf_token %}
+              {{ form.as_p }}
+             <p>Start the quiz with your name</p>
+             <div class="container input-group w-25 div1">
+              <label  for="" class="input-group-text input1">Name</label>
+              <input type="text" placeholder="Enter your name" name="name1" class="form-control w-25 label1" id="text2">
+          </div>
+              <div id="demo1" style="color: red; margin:10px"> </div>
+       
+              <a href="quiz3"><button class="btn btn-primary b1" onclick="return fn2()" id="mybutton1">Enter</button></a>
+            </form> 
+           
+      </section><br><br><br>
+      
+      <section id="section4">
+        <h1 style="color: gray; margin-top:40px; margin-bottom:80px; text-align:center;">Collections</h1>
+       
+            
+        <div class=" container row flex-row" style="margin-left: 10px;">
+               
+            <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+                  <a href="#section5" style="text-decoration: none;">
+                  <img src="{% static 'images/netflix.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+            <div class="card-body">
+                <h3 style="color:gray">Netflix</h3></a>
+               </div></div>
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+            <a href="#section5" style="text-decoration: none;">
+            <img src="{% static 'images/amazon.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+            <div class="card-body">
+                <h3 style="color:gray">Amzon</h3></a>
+               </div>
+        </div>
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+            <a href="#section5" style="text-decoration: none;">
+            <img src="{% static 'images/hotstar.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+            <div class="card-body">
+                <h3 style="color:gray">Hotstar</h3></a>
+               </div>
+        </div>
+        <div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+            <a href="#section5" style="text-decoration: none;">
+            <img src="{% static 'images/youtube.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+            <div class="card-body">
+                <h3 style="color:gray">Youtube</h3></a>
+               </div>
+        </div>
+      </div>
+    
+     </section>
+
+     <section id="contactus">
+      <div id="contact" style="text-align: center; justify-content:space-between;">
+            <h4 class="h1 head1">CONTACT US</h4>
+             <a href="https://www.instagram.com/manimightyboy/" style="margin-right: 20px;"><img src="{% static 'images/instagram.png' %}" alt=""></a>
+             <a href="https://github.com/khagesh000" style="margin-right: 20px;"><img src="{% static 'images/github.png' %}" alt=""></a>
+             <a href="mailto:yeraganakhagesh@gmail.com" style="margin-right: 20px;"><img src="{% static 'images/gmail.png' %}" alt=""></a>
+             <a href="https://t.me/yeragana mani" style="margin-right: 20px;"><img src="{% static 'images/telegram.png' %}" alt=""></a>
+      </div>
+
+      <div style="padding: 10px; margin-top:20px; background-color:gray ">
+        <marquee behavior="slow" direction=""><p style="font-size: 28px; color:darkslategrey"> Online quiz</p></marquee>
+      </div>
+  </section>
+
+        {% endblock %}
+</body>
+</html>

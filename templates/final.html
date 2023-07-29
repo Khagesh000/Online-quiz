@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        {% block content %}
+        <h1 class="h1 head1">CLICK the button create the quiz </h1>
+        <form action="{% url 'first' %}" method="post">
+            {% csrf_token %}
+        <a href="first"><button class="btn btn-primary btn1" type="submit">CREATE QUIZ</button></a>
+    </form>
+
+    <section id="content">
+        <h1 class="h1 head1" style="text-align:center; color:crimson">Best friend quiz:Trivia Questions</h1>
+        <p class="p p1">Have you ever wondered which friend knows you the best? Now you can test your friends by making your own trivia quiz about yourself. It’s the ultimate friendship test!</p>
+        <h1 class="h1 head1" style="text-align:center; color:crimson ">Quizzes for friends</h1>
+        <p class="p p1" style="color: gray;">Enter your name</p>
+        <p class="p p1" style="color: gray;">Create and answer 10 questions about your choices</p>
+        <p class="p p1" style="color: gray;">Copy quiz or share with whatsapp link and alternative apps link are provided send to your quiz</p>
+        <p class="p p1" style="color: gray;">Check the score</p>
+        <h1 class="h1 head1" style="text-align:center; color:crimson">BEST FRIENDS FOREVER</h1>
+        <p class="p p1" style="color: rgb(12, 12, 12);">is ypur best friend really your bestfriend forever i am implemented its only for entertainment</p>
+        <h1 class="h1 head1" style="text-align:center; color:crimson">Buddy meter</h1>
+        <p class="p p1" style="color: black;">After you have created your own quiz with ten customizable questions, post and share your quiz link with all your friends. Your friends then try to reach 10 out of 10 points. And you will see their results and see which of them is your top friend.</p>
+        <h1 class="h1 head1" style="text-align:center; color:crimson">Best friend quiz questions are just for fun</h1>
+        <p class="p p1" style="color: black;">Always remember: No matter how many questions your friends can answer in this buddy quiz; Don’t take it too seriously. A real friendship doesn’t require that they know your favorite color. 😊</p>
+      </section> <br><br><br><br><br>
+
+
+    <section id="contactus">
+        <div id="contact" style="text-align: center; justify-content:space-between;">
+              <h4 class="h1 head1">CONTACT US</h4>
+               <a href="https://www.instagram.com/manimightyboy/" style="margin-right: 20px;"><img src="{% static 'images/instagram.png' %}" alt=""></a>
+               <a href="https://github.com/khagesh000" style="margin-right: 20px;"><img src="{% static 'images/github.png' %}" alt=""></a>
+               <a href="mailto:yeraganakhagesh@gmail.com" style="margin-right: 20px;"><img src="{% static 'images/gmail.png' %}" alt=""></a>
+               <a href="https://t.me/yeragana mani" style="margin-right: 20px;"><img src="{% static 'images/telegram.png' %}" alt=""></a>
+        </div>
+        <img src="{% static 'images/friends.jpg' %}" alt="" class="img1 img-card-top" style="width: 100%; margin-top: 30px;">
+
+        <div style="padding: 10px; margin-top:20px; background-color:gray ">
+          <marquee behavior="slow" direction=""><p style="font-size: 28px; color:darkslategrey"> Online quiz</p></marquee>
+        </div>
+    </section>
+        {% endblock %}
+</body>
+</html>

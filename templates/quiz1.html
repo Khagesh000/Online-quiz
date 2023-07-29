@@ -1,0 +1,179 @@
+{% extends 'index.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+        {% block content %}
+
+        <section id="head">
+          <div class="navbar navbar-light bg-light navbar-expand-lg">
+           <a href="#" class="navbar-brand"><img src="{% static 'images/mani.png' %}" alt="" class="image"></a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span></button>
+           <div class="navbar-collapse collapse" id="menu">
+             <ul class="navbar-nav ms-auto">
+               <li class="nav-item"><a class="nav-link" aria-current="page" href="#contactus">Contact us</a></li>
+               <li class="nav-item"><a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Privacy policy</a></li>
+             </ul>
+           </div>
+          </div>
+         </section>
+
+        <section>
+          
+            {% csrf_token %}
+    
+            <div class="col  col-sm-12 col-md-12 col-lg-12 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-100 flex-lg-basis-100 col-sm-basis-100 flex-sm-grow-1  col1"></div>
+            <h4 class="h1 head1" style="text-align: center;">Best Friend Quiz</h4>
+            <p class="p p1" style="text-align: center;">How well do your friends know you?</p>
+            <img src="{% static 'images/friends.jpg' %}" alt="" class="img1 img-card-top" style="width: 100%"></div>
+            <div class="container div2">
+               <h4 class="h1 head1">Your quiz is ready</h4>
+               <p class="p p1">Share your quiz link with all your friends and see their results.</p>
+               <a href="{{ share_url }}" target="_blank"><button class="btn btn-primary btn1">Share on whatsapp</button></a>
+               <a href="instagram://share?url={{ share_url }}" target="_blank"><button class="btn btn-success btn1">Share on instagram</button></a>
+               <a href="https://telegram.me:/share/url?url={{ share_url }}" target="_blank"><button class="btn btn-danger btn1">Share on Telegram</button></a>
+            </div>
+          
+</section> 
+
+  <section class="container">
+    <h4 class="h1 head1" style="font-family: 'serif';">IT TAKES FEW HOURS</h4>
+           <table class="table table-success table-striped table-hover">
+            <thead>
+              <th scope="col"><S class="NO"></S></th>
+              <th scope="col">Name</th>
+              <th scope="col">Results</th>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <th scope="row">{{name1}}</th>
+                <th scope="row">{{sum}}</th>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <th scope="row">{{name1}}</th>
+                <th scope="row">{{sum}}</th>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <th scope="row">{{name1}}</th>
+                <th scope="row">{{sum}}</th>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <th scope="row">{{name1}}</th>
+                <th scope="row">{{sum}}</th>
+              </tr>
+              <tr>
+                <th scope="row">5</th>
+                <th scope="row">{{name1}}</th>
+                <th scope="row">{{sum}}</th>
+              </tr>
+            </tbody>
+           </table>
+   <div>
+    data{{user.username}}
+    data1{{data1}}
+    sum{{sum}}
+    
+    {% if data1 %}
+    <p>Data 1: {{ data1 }}</p>
+    {% endif %}
+    {% if data2 %}
+    <p>Data 2: {{ data2 }}</p>
+    {% endif %}
+    {% if username2 %}
+    <p>Username 2: {{ username2 }}</p>
+    {% endif %}
+    {% if result %}
+    <p>Result: {{ result }}</p>
+    {% endif %}
+   </div>
+  </section>
+
+   <section id="section4">
+    <h1 style="color: grey; margin-top:40px; margin-bottom:80px; text-align:center;">Collections</h1>
+   
+        
+    <div class=" container row flex-row" style="margin-left: 10px;">
+           
+        <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 card col1" style="border: none;">
+              <a href="#section5" style="text-decoration: none;">
+              <img src="{% static 'images/netflix.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px; text-decoration:none">
+        <div class="card-body">
+            <h3 style="color:gray">Netflix</h3></a>
+           </div></div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1 col1" style="border: none;">
+        <a href="#section5" style="text-decoration: none;">
+        <img src="{% static 'images/amazon.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Amzon</h3></a>
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-3 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section5" style="text-decoration: none;">
+        <img src="{% static 'images/hotstar.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px">
+        <div class="card-body">
+            <h3 style="color:gray">Hotstar</h3></a>
+           </div>
+    </div>
+    <div class="col  col-sm-6 col-md-3 col-lg-13 flex-md-grow-1 flex-lg-grow-1 flex-md-basis-25 flex-lg-basis-50 col-sm-basis-100 flex-sm-grow-1  col1" style="border: none;">
+        <a href="#section5" style="text-decoration: none;">
+        <img src="{% static 'images/youtube.jpeg' %}" alt="" class="img1 img-card-top" style="width: 180px; height:140px;">
+        <div class="card-body">
+            <h3 style="color:gray">Youtube</h3></a>
+           </div>
+    </div>
+  </div>
+
+ </section>
+  
+  <section id="content">
+    <h1 class="h1 head1" style="text-align:center; color:crimson">Best friend quiz:Trivia Questions</h1>
+    <p class="p p1">Have you ever wondered which friend knows you the best? Now you can test your friends by making your own trivia quiz about yourself. It’s the ultimate friendship test!</p>
+    <h1 class="h1 head1" style="text-align:center; color:crimson ">Quizzes for friends</h1>
+    <p class="p p1" style="color: gray;">Enter your name</p>
+    <p class="p p1" style="color: gray;">Create and answer 10 questions about your choices</p>
+    <p class="p p1" style="color: gray;">Copy quiz or share with whatsapp link and alternative apps link are provided send to your quiz</p>
+    <p class="p p1" style="color: gray;">Check the score</p>
+    <h1 class="h1 head1" style="text-align:center; color:crimson">BEST FRIENDS FOREVER</h1>
+    <p class="p p1" style="color: rgb(12, 12, 12);">is ypur best friend really your bestfriend forever i am implemented its only for entertainment</p>
+    <h1 class="h1 head1" style="text-align:center; color:crimson">Buddy meter</h1>
+    <p class="p p1" style="color: black;">After you have created your own quiz with ten customizable questions, post and share your quiz link with all your friends. Your friends then try to reach 10 out of 10 points. And you will see their results and see which of them is your top friend.</p>
+    <h1 class="h1 head1" style="text-align:center; color:crimson">Best friend quiz questions are just for fun</h1>
+    <p class="p p1" style="color: black;">Always remember: No matter how many questions your friends can answer in this buddy quiz; Don’t take it too seriously. A real friendship doesn’t require that they know your favorite color. 😊</p>
+  </section> <br><br><br><br><br>
+
+  <section id="contactus">
+    <div id="contact" style="text-align: center; justify-content:space-between;">
+          <h4 class="h1 head1">CONTACT US</h4>
+           <a href="https://www.instagram.com/manimightyboy/" style="margin-right: 20px;"><img src="{% static 'images/instagram.png' %}" alt=""></a>
+           <a href="https://github.com/khagesh000" style="margin-right: 20px;"><img src="{% static 'images/github.png' %}" alt=""></a>
+           <a href="mailto:yeraganakhagesh@gmail.com" style="margin-right: 20px;"><img src="{% static 'images/gmail.png' %}" alt=""></a>
+           <a href="https://t.me/yeragana mani" style="margin-right: 20px;"><img src="{% static 'images/telegram.png' %}" alt=""></a>
+    </div>
+
+    <div style="padding: 10px; margin-top:20px; background-color:gray ">
+      <marquee behavior="slow" direction=""><p style="font-size: 28px; color:darkslategrey"> Online quiz</p></marquee>
+    </div>
+</section>
+   
+    
+
+              
+      {% endblock %}
+</body>
+</html>
